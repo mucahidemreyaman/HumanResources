@@ -2,7 +2,7 @@
 
 namespace HumanResources.Domain.Entity
 {
-    public class BackEndPersonel : AccountInfo
+    public class BackEndPersonel : BasePersonel
     {
 
         

@@ -1,21 +1,27 @@
 ﻿using HumanResources.Domain.Absract;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using HumanResources.Domain.Entity;
 
 namespace HumanResources.Data.Mapping
 {
-    public  class BasePersonelMapping : IEntityTypeConfiguration<BasePersonel> 
+    public class FrontEndPersonelMapping : IEntityTypeConfiguration<FrontEndPersonel>
     {
-         
-    
 
-        public void Configure(EntityTypeBuilder<BasePersonel> builder)
+
+
+        public void Configure(EntityTypeBuilder<FrontEndPersonel> builder)
         {
 
             builder.HasKey(x => x.PersonelId);
             builder.Property(x => x.PersonelId)
                 .IsRequired()
-                .HasColumnName("PERSONEL_ID")
+                .HasColumnName("ID_PERSONEL")
                 .HasColumnOrder(1);
 
             builder.Property(x => x.IdentityId)
@@ -68,5 +74,4 @@ namespace HumanResources.Data.Mapping
         }
     }
 
-    
 }

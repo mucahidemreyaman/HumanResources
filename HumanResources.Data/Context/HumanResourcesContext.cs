@@ -1,4 +1,5 @@
 ﻿using HumanResources.Data.Mapping;
+using HumanResources.Domain.Absract;
 using HumanResources.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,11 +9,14 @@ namespace HumanResources.Data.Context
     {
         // domain katmanındaki semalarımız DB bağlanmak ve nesnelerimizi yönetmek icin domain katmanı kurulur..
 
-
+        
         DbSet<Manager> Managers { get; set; }
         DbSet<FrontEndPersonel>FrontEndPersonels { get; set; }
         DbSet<BackEndPersonel>BackEndPersonels { get; set;}
         DbSet<DesignerPersonel>DesignerPersonels { get; set; }
+
+        DbSet<AccountInfo> AccountInfos { get; set; }
+        DbSet<BasePersonel> BasePersonels { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -25,6 +29,12 @@ namespace HumanResources.Data.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new AccountInfoMapping());
+            modelBuilder.ApplyConfiguration(new BasePersonelMapping());
+            modelBuilder.ApplyConfiguration(new ManagerMapping());
+            modelBuilder.ApplyConfiguration(new FrontEndPersonelMapping());
+            modelBuilder.ApplyConfiguration(new BackEndPersonelMapping());
+            modelBuilder.ApplyConfiguration(new DesignerPersonelMapping());
+
         }
 
     }

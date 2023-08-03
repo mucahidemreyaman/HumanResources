@@ -1,6 +1,7 @@
 ﻿namespace HumanResources.Domain.Absract
 {
-    public class BasePersonel
+    public abstract  class BasePersonel
+
     {
         public int PersonelId { get; set; }
 

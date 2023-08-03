@@ -5,10 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace HumanResources.Data.Mapping
 {
-    public abstract class AccountInfoMapping<T> : IEntityTypeConfiguration<T> where T : AccountInfo
+    public  class AccountInfoMapping : IEntityTypeConfiguration<AccountInfo>
     {
-        public abstract void ConfigureDerivedEntityMapping(EntityTypeBuilder<T> builder);
-        public void Configure(EntityTypeBuilder<T> builder)
+      
+
+        public void Configure(EntityTypeBuilder<AccountInfo> builder)
         {
             builder.HasKey(x => x.Username);
 
@@ -18,13 +19,14 @@ namespace HumanResources.Data.Mapping
                 .HasColumnType("nvarchar(20)")
                 .HasColumnOrder(11);
 
-            builder.Property(x=> x.Password)
+            builder.Property(x => x.Password)
                 .IsRequired()
                 .HasColumnName("PASSWORD")
                 .HasColumnType("nvarchar(16)")
                 .HasColumnOrder(12);
-            
         }
+
+
     }
 
 
