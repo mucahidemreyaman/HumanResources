@@ -21,7 +21,7 @@
 
         public int Salary { get; set; }
 
-        public Gender Gender { get; set; }
+        public bool? Gender { get; set; }
     }
     public enum Gender 
     { 

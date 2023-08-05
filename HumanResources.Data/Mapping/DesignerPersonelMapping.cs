@@ -6,15 +6,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HumanResources.Domain.Absract;
 
 namespace HumanResources.Data.Mapping
 {
-    public class DesignerPersonelMapping : IEntityTypeConfiguration<DesignerPersonel>
+    public class DesignerPersonelMapping : IEntityTypeConfiguration<BasePersonel>
     {
 
 
 
-        public void Configure(EntityTypeBuilder<DesignerPersonel> builder)
+        public void Configure(EntityTypeBuilder<BasePersonel> builder)
         {
 
             builder.HasKey(x => x.PersonelId);

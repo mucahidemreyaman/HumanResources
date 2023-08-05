@@ -2,7 +2,7 @@
 
 namespace HumanResources.Domain.Entity
 {
-    public class Manager : AccountInfo
+    public class Manager : BasePersonel
     {
           
     }

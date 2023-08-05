@@ -10,12 +10,12 @@ using HumanResources.Domain.Entity;
 
 namespace HumanResources.Data.Mapping
 {
-    public class FrontEndPersonelMapping : IEntityTypeConfiguration<FrontEndPersonel>
+    public class FrontEndPersonelMapping : IEntityTypeConfiguration<BasePersonel>
     {
 
 
 
-        public void Configure(EntityTypeBuilder<FrontEndPersonel> builder)
+        public void Configure(EntityTypeBuilder<BasePersonel> builder)
         {
 
             builder.HasKey(x => x.PersonelId);
